@@ -11,31 +11,70 @@ export default function Answers({
   setAnswers,
   index,
   complete,
-  setComplete,
+  buttonClicked,
+  setButtonClicked,
 }) {
-  const correctAnswer = () => {
+  const correctAnswer = (e) => {
     setAnswers({ ...answers, [index]: true });
+    setButtonClicked({ ...buttonClicked, [index]: e.target.value });
     console.log("ANSWERS", answers);
   };
 
-  const incorrectAnswer = () => {
+  const incorrectAnswer1 = (e) => {
     setAnswers({ ...answers, [index]: false });
+    setButtonClicked({ ...buttonClicked, [index]: e.target.value });
+    console.log("ANSWERS", answers);
+  };
+
+  const incorrectAnswer2 = (e) => {
+    setAnswers({ ...answers, [index]: false });
+    setButtonClicked({ ...buttonClicked, [index]: e.target.value });
+    console.log("ANSWERS", answers);
+  };
+
+  const incorrectAnswer3 = (e) => {
+    setAnswers({ ...answers, [index]: false });
+    setButtonClicked({ ...buttonClicked, [index]: e.target.value });
     console.log("ANSWERS", answers);
   };
   return (
     <div>
       {incorrect2 ? (
         <>
-          <button className="correct" onClick={correctAnswer}>
+          <button
+            className={
+              buttonClicked[index] === "btn1" ? "buttonFalse" : "buttonTrue"
+            }
+            value="btn1"
+            onClick={correctAnswer}
+          >
             {correct}
           </button>
-          <button className="incorrect" onClick={incorrectAnswer}>
+          <button
+            className={
+              buttonClicked[index] === "btn2" ? "buttonFalse" : "buttonTrue"
+            }
+            value="btn2"
+            onClick={incorrectAnswer1}
+          >
             {incorrect1}
           </button>
-          <button className="incorrect" onClick={incorrectAnswer}>
+          <button
+            className={
+              buttonClicked[index] === "btn3" ? "buttonFalse" : "buttonTrue"
+            }
+            value="btn3"
+            onClick={incorrectAnswer2}
+          >
             {incorrect2}
           </button>
-          <button className="incorrect" onClick={incorrectAnswer}>
+          <button
+            className={
+              buttonClicked[index] === "btn4" ? "buttonFalse" : "buttonTrue"
+            }
+            value="btn4"
+            onClick={incorrectAnswer3}
+          >
             {incorrect3}
           </button>
           {complete ? (
@@ -48,10 +87,22 @@ export default function Answers({
         </>
       ) : (
         <>
-          <button className="correct" onClick={correctAnswer}>
+          <button
+            className={
+              buttonClicked[index] === "btn1" ? "buttonFalse" : "buttonTrue"
+            }
+            value="btn1"
+            onClick={correctAnswer}
+          >
             {correct}
           </button>
-          <button className="incorrect" onClick={incorrectAnswer}>
+          <button
+            className={
+              buttonClicked[index] === "btn2" ? "buttonFalse" : "buttonTrue"
+            }
+            value="btn2"
+            onClick={incorrectAnswer1}
+          >
             {incorrect1}
           </button>
           {complete ? (

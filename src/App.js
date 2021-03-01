@@ -8,6 +8,7 @@ function App() {
   const [data, setData] = useState([]);
   const [answers, setAnswers] = useState({});
   const [complete, setComplete] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState({});
 
   const getQuestions = async () => {
     const response = await fetch(
@@ -37,6 +38,8 @@ function App() {
             incorrect3={question.incorrect_answers[2]}
             complete={complete}
             setComplete={setComplete}
+            buttonClicked={buttonClicked}
+            setButtonClicked={setButtonClicked}
           />
         </>
       ))}
