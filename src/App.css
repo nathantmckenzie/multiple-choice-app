@@ -8,7 +8,15 @@ body {
 }
 
 .checkmark {
+  position: relative;
+  left: 50px;
   width:10%;
+}
+
+.xmark {
+  position: relative;
+  left: 50px;
+  width: 10%;
 }
 
 .correct-answer {

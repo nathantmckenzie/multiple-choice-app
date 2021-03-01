@@ -80,8 +80,17 @@ export default function Answers({
           {complete ? (
             <div className="correct-answer">
               {" "}
-              <p>Correct Answer: {correct}</p>
-              <img className="checkmark" src={checkmark} />{" "}
+              <p>Correct Answer: {correct}</p>{" "}
+              {answers[index] === true ? (
+                <>
+                  <img className="checkmark" src={checkmark} />
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <img className="xmark" src={xmark} />{" "}
+                </>
+              )}
             </div>
           ) : null}
         </>
@@ -109,7 +118,16 @@ export default function Answers({
             <div className="correct-answer">
               {" "}
               <p>Correct Answer: {correct}</p>{" "}
-              <img className="checkmark" src={checkmark} />{" "}
+              {answers[index] === true ? (
+                <>
+                  <img className="checkmark" src={checkmark} />
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <img className="xmark" src={xmark} />{" "}
+                </>
+              )}
             </div>
           ) : null}
         </>
