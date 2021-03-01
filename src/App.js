@@ -35,6 +35,8 @@ function App() {
             incorrect1={question.incorrect_answers[0]}
             incorrect2={question.incorrect_answers[1]}
             incorrect3={question.incorrect_answers[2]}
+            complete={complete}
+            setComplete={setComplete}
           />
         </>
       ))}

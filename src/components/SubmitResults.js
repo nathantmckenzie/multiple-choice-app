@@ -17,7 +17,6 @@ export default function SubmitResults({
 
   const calculateScore = () => {
     const arr = Object.values(answers);
-    const counter = 0;
     return arr.filter((answer) => answer === true).length;
   };
 

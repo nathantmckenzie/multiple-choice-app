@@ -1,3 +1,11 @@
 .results-button {
   margin-top: 30px;
 }
+
+.checkmark {
+  width:10%;
+}
+
+.correct-answer {
+  display: flex;
+}
