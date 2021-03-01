@@ -20,18 +20,31 @@ export default function Answers({
   };
   return (
     <div>
-      <button className="correct" onClick={correctAnswer}>
-        {correct}
-      </button>
-      <button className="incorrect" onClick={incorrectAnswer}>
-        {incorrect1}
-      </button>
-      <button className="incorrect" onClick={incorrectAnswer}>
-        {incorrect2}
-      </button>
-      <button className="incorrect" onClick={incorrectAnswer}>
-        {incorrect3}
-      </button>
+      {incorrect2 ? (
+        <>
+          <button className="correct" onClick={correctAnswer}>
+            {correct}
+          </button>
+          <button className="incorrect" onClick={incorrectAnswer}>
+            {incorrect1}
+          </button>
+          <button className="incorrect" onClick={incorrectAnswer}>
+            {incorrect2}
+          </button>
+          <button className="incorrect" onClick={incorrectAnswer}>
+            {incorrect3}
+          </button>
+        </>
+      ) : (
+        <>
+          <button className="correct" onClick={correctAnswer}>
+            {correct}
+          </button>
+          <button className="incorrect" onClick={incorrectAnswer}>
+            {incorrect1}
+          </button>
+        </>
+      )}
     </div>
   );
 }
