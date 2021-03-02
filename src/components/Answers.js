@@ -129,28 +129,28 @@ export default function Answers({
           <button
             className={buttonColor1()}
             value="btn1"
-            onClick={correctAnswer}
+            onClick={complete ? null : correctAnswer}
           >
             {correct}
           </button>
           <button
             className={buttonColor2()}
             value="btn2"
-            onClick={incorrectAnswer1}
+            onClick={complete ? null : incorrectAnswer1}
           >
             {incorrect1}
           </button>
           <button
             className={buttonColor3()}
             value="btn3"
-            onClick={incorrectAnswer2}
+            onClick={complete ? null : incorrectAnswer2}
           >
             {incorrect2}
           </button>
           <button
             className={buttonColor4()}
             value="btn4"
-            onClick={incorrectAnswer3}
+            onClick={complete ? null : incorrectAnswer3}
           >
             {incorrect3}
           </button>
@@ -158,27 +158,22 @@ export default function Answers({
             <div className="correct-answer">
               {" "}
               <p>Correct Answer: {correct}</p>{" "}
-              {answers[index] === true ? <>✅</> : <>❌</>}
             </div>
           ) : null}
         </div>
       ) : (
         <>
           <button
-            className={
-              buttonClicked[index] === "btn1" ? "buttonFalse" : "buttonTrue"
-            }
+            className={buttonColor1()}
             value="btn1"
-            onClick={correctAnswer}
+            onClick={complete ? null : correctAnswer}
           >
             {correct}
           </button>
           <button
-            className={
-              buttonClicked[index] === "btn2" ? "buttonFalse" : "buttonTrue"
-            }
+            className={buttonColor2()}
             value="btn2"
-            onClick={incorrectAnswer1}
+            onClick={complete ? null : incorrectAnswer1}
           >
             {incorrect1}
           </button>
@@ -186,7 +181,6 @@ export default function Answers({
             <div className="correct-answer">
               {" "}
               <p>Correct Answer: {correct}</p>{" "}
-              {answers[index] === true ? <>✅</> : <>❌</>}
             </div>
           ) : null}
         </>
