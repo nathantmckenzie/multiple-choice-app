@@ -1,5 +1,7 @@
 body {
   background-color: #e3e1fa;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -23,7 +25,7 @@ body {
   display: flex;
 }
 
-.buttonTrue {
+.buttonUnclicked {
   display: inline-block;
   padding: 15px 25px;
   font-size: 24px;
@@ -38,7 +40,7 @@ body {
   box-shadow: 0 9px #999;
 }
 
-.buttonFalse {
+.buttonClicked {
   display: inline-block;
   padding: 15px 25px;
   font-size: 24px;
@@ -52,3 +54,49 @@ body {
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
+
+.buttonTrue{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: green;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.buttonFalse {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.four-buttons {
+  display:flex;
+  flex-direction: column;
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+.green-text {
+  color:#32CD32
+}
+
+.red-text {
+  color: red;
+}
+

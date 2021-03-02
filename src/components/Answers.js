@@ -37,41 +37,118 @@ export default function Answers({
     setButtonClicked({ ...buttonClicked, [index]: e.target.value });
     console.log("ANSWERS", answers);
   };
+
+  const buttonColor1 = () => {
+    if (!complete) {
+      if (buttonClicked[index] === "btn1") {
+        return "buttonClicked";
+      } else {
+        return "buttonUnclicked";
+      }
+    } else if (complete) {
+      if (buttonClicked[index] === "btn1" && answers[index] === true) {
+        return "buttonTrue";
+      } else if (buttonClicked[index] !== "btn1" && answers[index] === true) {
+        return "buttonUnclicked";
+      }
+      if (buttonClicked[index] === "btn1" && answers[index] === false) {
+        return "buttonFalse";
+      } else if (buttonClicked[index] !== "btn1" && answers[index] === false) {
+        return "buttonUnclicked";
+      }
+    }
+  };
+
+  const buttonColor2 = () => {
+    if (!complete) {
+      if (buttonClicked[index] === "btn2") {
+        return "buttonClicked";
+      } else {
+        return "buttonUnclicked";
+      }
+    } else if (complete) {
+      if (buttonClicked[index] === "btn2" && answers[index] === true) {
+        return "buttonTrue";
+      } else if (buttonClicked[index] !== "btn2" && answers[index] === true) {
+        return "buttonUnclicked";
+      }
+      if (buttonClicked[index] === "btn2" && answers[index] === false) {
+        return "buttonFalse";
+      } else if (buttonClicked[index] !== "btn2" && answers[index] === false) {
+        return "buttonUnclicked";
+      }
+    }
+  };
+
+  const buttonColor3 = () => {
+    if (!complete) {
+      if (buttonClicked[index] === "btn3") {
+        return "buttonClicked";
+      } else {
+        return "buttonUnclicked";
+      }
+    } else if (complete) {
+      if (buttonClicked[index] === "btn3" && answers[index] === true) {
+        return "buttonTrue";
+      } else if (buttonClicked[index] !== "btn3" && answers[index] === true) {
+        return "buttonUnclicked";
+      }
+      if (buttonClicked[index] === "btn3" && answers[index] === false) {
+        return "buttonFalse";
+      } else if (buttonClicked[index] !== "btn3" && answers[index] === false) {
+        return "buttonUnclicked";
+      }
+    }
+  };
+
+  const buttonColor4 = () => {
+    if (!complete) {
+      if (buttonClicked[index] === "btn4") {
+        return "buttonClicked";
+      } else {
+        return "buttonUnclicked";
+      }
+    } else if (complete) {
+      if (buttonClicked[index] === "btn4" && answers[index] === true) {
+        return "buttonTrue";
+      } else if (buttonClicked[index] !== "btn4" && answers[index] === true) {
+        return "buttonUnclicked";
+      }
+      if (buttonClicked[index] === "btn4" && answers[index] === false) {
+        return "buttonFalse";
+      } else if (buttonClicked[index] !== "btn4" && answers[index] === false) {
+        return "buttonUnclicked";
+      }
+    }
+  };
+
   return (
     <div>
       {incorrect2 ? (
-        <>
+        <div className="four-buttons">
           <button
-            className={
-              buttonClicked[index] === "btn1" ? "buttonFalse" : "buttonTrue"
-            }
+            className={buttonColor1()}
             value="btn1"
             onClick={correctAnswer}
           >
             {correct}
           </button>
           <button
-            className={
-              buttonClicked[index] === "btn2" ? "buttonFalse" : "buttonTrue"
-            }
+            className={buttonColor2()}
             value="btn2"
             onClick={incorrectAnswer1}
           >
             {incorrect1}
           </button>
           <button
-            className={
-              buttonClicked[index] === "btn3" ? "buttonFalse" : "buttonTrue"
-            }
+            className={buttonColor3()}
             value="btn3"
             onClick={incorrectAnswer2}
           >
             {incorrect2}
           </button>
           <button
-            className={
-              buttonClicked[index] === "btn4" ? "buttonFalse" : "buttonTrue"
-            }
+            className={buttonColor4()}
             value="btn4"
             onClick={incorrectAnswer3}
           >
@@ -81,19 +158,10 @@ export default function Answers({
             <div className="correct-answer">
               {" "}
               <p>Correct Answer: {correct}</p>{" "}
-              {answers[index] === true ? (
-                <>
-                  <img className="checkmark" src={checkmark} />
-                </>
-              ) : (
-                <>
-                  {" "}
-                  <img className="xmark" src={xmark} />{" "}
-                </>
-              )}
+              {answers[index] === true ? <>✅</> : <>❌</>}
             </div>
           ) : null}
-        </>
+        </div>
       ) : (
         <>
           <button
@@ -118,16 +186,7 @@ export default function Answers({
             <div className="correct-answer">
               {" "}
               <p>Correct Answer: {correct}</p>{" "}
-              {answers[index] === true ? (
-                <>
-                  <img className="checkmark" src={checkmark} />
-                </>
-              ) : (
-                <>
-                  {" "}
-                  <img className="xmark" src={xmark} />{" "}
-                </>
-              )}
+              {answers[index] === true ? <>✅</> : <>❌</>}
             </div>
           ) : null}
         </>

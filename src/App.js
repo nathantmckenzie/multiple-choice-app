@@ -27,7 +27,12 @@ function App() {
       <h1>Multiple Choice Quiz</h1>
       {data.map((question, index) => (
         <>
-          <Question index={index} question={question.question} />
+          <Question
+            index={index}
+            question={question.question}
+            complete={complete}
+            answers={answers}
+          />
           <Answers
             index={index}
             answers={answers}
