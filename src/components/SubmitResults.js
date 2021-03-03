@@ -1,11 +1,6 @@
 import React from "react";
 
-export default function SubmitResults({
-  answers,
-  setAnswers,
-  complete,
-  setComplete,
-}) {
+export default function SubmitResults({ answers, complete, setComplete }) {
   const validateCompletedTest = () => {
     const arr = Object.values(answers);
     console.log("arr", arr);
@@ -21,13 +16,13 @@ export default function SubmitResults({
   };
 
   return (
-    <div>
+    <div className="results-buttons">
       <button className="results-button" onClick={validateCompletedTest}>
         Get Results
       </button>
       <button onClick={() => window.location.reload()}>Try Another Quiz</button>
       {!complete ? (
-        <div>COMPLETE THE DAMN TEST</div>
+        <div>Please Complete the Test</div>
       ) : (
         <div>You scored {calculateScore()} / 5</div>
       )}

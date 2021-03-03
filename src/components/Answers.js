@@ -1,6 +1,4 @@
 import React from "react";
-import checkmark from "../images/checkmark1.jpg";
-import xmark from "../images/xmark.jpg";
 
 export default function Answers({
   correct,
@@ -122,6 +120,17 @@ export default function Answers({
     }
   };
 
+  function shuffleQuestions() {
+    const array = [1, 2, 3, 4];
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+
   return (
     <div>
       {incorrect2 ? (
@@ -162,7 +171,7 @@ export default function Answers({
           ) : null}
         </div>
       ) : (
-        <>
+        <div className="true-false">
           <button
             className={buttonColor1()}
             value="btn1"
@@ -183,7 +192,7 @@ export default function Answers({
               <p>Correct Answer: {correct}</p>{" "}
             </div>
           ) : null}
-        </>
+        </div>
       )}
     </div>
   );

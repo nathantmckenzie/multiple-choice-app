@@ -1,7 +1,6 @@
 body {
   background-color: #e3e1fa;
-  display: flex;
-  justify-content: center;
+  margin: 30px;
 }
 
 
@@ -86,9 +85,23 @@ body {
 }
 
 .four-buttons {
-  display:flex;
-  flex-direction: column;
-  width: 20%;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  margin-bottom: 50px;
+  justify-content: center;
+  gap: 10px;
+}
+
+.true-false {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.results-button {
+  display: grid;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -100,3 +113,12 @@ body {
   color: red;
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}

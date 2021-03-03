@@ -24,7 +24,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <h1>Multiple Choice Quiz</h1>
+      <h1 class="title">Multiple Choice Quiz</h1>
       {data.map((question, index) => (
         <>
           <Question
