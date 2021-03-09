@@ -11,6 +11,8 @@ function App() {
   const [buttonClicked, setButtonClicked] = useState({});
   const [numberOfQuestions, setNumberOfQuestions] = useState(5);
   const [input, setInput] = useState();
+  const [totalCorrect, setTotalCorrect] = useState([]);
+  const [totalQuestions, setTotalQuestions] = useState([]);
 
   const getQuestions = async () => {
     const response = await fetch(
@@ -40,7 +42,11 @@ function App() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         ></input>
-        <button onClick={setNumberOfQuestion}>Submit</button>
+        {!complete ? (
+          <button onClick={setNumberOfQuestion}>Submit</button>
+        ) : (
+          <button disabled>Submit</button>
+        )}
       </form>
       {data.map((question, index) => (
         <>
@@ -71,6 +77,10 @@ function App() {
         complete={complete}
         setComplete={setComplete}
         numberOfQuestions={numberOfQuestions}
+        totalQuestions={totalQuestions}
+        setTotalQuestions={setTotalQuestions}
+        totalCorrect={totalCorrect}
+        setTotalCorrect={setTotalCorrect}
       />
     </div>
   );

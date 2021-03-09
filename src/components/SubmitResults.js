@@ -5,6 +5,10 @@ export default function SubmitResults({
   complete,
   setComplete,
   numberOfQuestions,
+  totalQuestions,
+  setTotalQuestions,
+  totalCorrect,
+  setTotalCorrect,
 }) {
   const validateCompletedTest = () => {
     const arr = Object.values(answers);
@@ -14,11 +18,15 @@ export default function SubmitResults({
     }
     console.log("numberOfQuestions", numberOfQuestions);
     console.log("COMPLETE", complete);
+    const correctAnswers = arr.filter((answer) => answer === true).length;
+    setTotalCorrect([...totalCorrect, correctAnswers]);
+    console.log("TOTAL Correct", totalCorrect);
   };
 
   const calculateScore = () => {
     const arr = Object.values(answers);
-    return arr.filter((answer) => answer === true).length;
+    const correctAnswers = arr.filter((answer) => answer === true).length;
+    return correctAnswers;
   };
 
   return (
