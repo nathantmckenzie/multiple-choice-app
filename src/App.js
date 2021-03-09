@@ -27,7 +27,7 @@ function App() {
 
   const setNumberOfQuestion = (e) => {
     e.preventDefault();
-    setNumberOfQuestions(input);
+    setNumberOfQuestions(Number(input));
   };
 
   return (
@@ -35,7 +35,11 @@ function App() {
       <h1 class="title">Multiple Choice Quiz</h1>
       <form className="number-of-questions">
         <label>Number of Questions:</label>
-        <input value={input} onChange={(e) => setInput(e.target.value)}></input>
+        <input
+          type="number"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        ></input>
         <button onClick={setNumberOfQuestion}>Submit</button>
       </form>
       {data.map((question, index) => (
@@ -66,6 +70,7 @@ function App() {
         setAnswers={setAnswers}
         complete={complete}
         setComplete={setComplete}
+        numberOfQuestions={numberOfQuestions}
       />
     </div>
   );

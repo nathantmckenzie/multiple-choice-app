@@ -1,12 +1,18 @@
 import React from "react";
 
-export default function SubmitResults({ answers, complete, setComplete }) {
+export default function SubmitResults({
+  answers,
+  complete,
+  setComplete,
+  numberOfQuestions,
+}) {
   const validateCompletedTest = () => {
     const arr = Object.values(answers);
-    console.log("arr", arr);
-    if (arr.length === 5) {
+    console.log("arr.length", arr.length);
+    if (arr.length === numberOfQuestions) {
       setComplete(true);
     }
+    console.log("numberOfQuestions", numberOfQuestions);
     console.log("COMPLETE", complete);
   };
 
@@ -29,7 +35,9 @@ export default function SubmitResults({ answers, complete, setComplete }) {
       {!complete ? (
         <div>Please Complete the Test</div>
       ) : (
-        <div>You scored {calculateScore()} / 5</div>
+        <div>
+          You scored {calculateScore()} / {numberOfQuestions}
+        </div>
       )}
     </div>
   );
