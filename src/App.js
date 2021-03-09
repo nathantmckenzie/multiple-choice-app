@@ -9,10 +9,12 @@ function App() {
   const [answers, setAnswers] = useState({});
   const [complete, setComplete] = useState(false);
   const [buttonClicked, setButtonClicked] = useState({});
+  const [numberOfQuestions, setNumberOfQuestions] = useState(5);
+  const [input, setInput] = useState();
 
   const getQuestions = async () => {
     const response = await fetch(
-      `https://opentdb.com/api.php?amount=5&category=9`
+      `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=9`
     );
     const data = await response.json();
     console.log("Data", data.results);
@@ -21,10 +23,21 @@ function App() {
 
   useEffect(() => {
     getQuestions();
-  }, []);
+  }, [numberOfQuestions]);
+
+  const setNumberOfQuestion = (e) => {
+    e.preventDefault();
+    setNumberOfQuestions(input);
+  };
+
   return (
     <div className="App">
       <h1 class="title">Multiple Choice Quiz</h1>
+      <form className="number-of-questions">
+        <label>Number of Questions:</label>
+        <input value={input} onChange={(e) => setInput(e.target.value)}></input>
+        <button onClick={setNumberOfQuestion}>Submit</button>
+      </form>
       {data.map((question, index) => (
         <>
           <Question

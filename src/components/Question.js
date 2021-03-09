@@ -9,7 +9,7 @@ export default function Question({ question, index, complete, answers }) {
         }
       >
         Question {index + 1}:{" "}
-        {question.replace("&quot;", '"').replace("&#039;", "'")}
+        {question.replace(/&quot;/g, '"').replace(/&#039;/g, "'")}
       </h2>
     </div>
   );

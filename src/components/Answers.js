@@ -140,28 +140,40 @@ export default function Answers({
             value="btn1"
             onClick={complete ? null : correctAnswer}
           >
-            {correct}
+            {correct
+              .replace(/&quot;/g, '"')
+              .replace(/&#039;/g, "'")
+              .replace(/&&amp;/g, "&")}
           </button>
           <button
             className={buttonColor2()}
             value="btn2"
             onClick={complete ? null : incorrectAnswer1}
           >
-            {incorrect1}
+            {incorrect1
+              .replace(/&quot;/g, '"')
+              .replace(/&#039;/g, "'")
+              .replace(/&&amp;/g, "&")}
           </button>
           <button
             className={buttonColor3()}
             value="btn3"
             onClick={complete ? null : incorrectAnswer2}
           >
-            {incorrect2}
+            {incorrect2
+              .replace(/&quot;/g, '"')
+              .replace(/&#039;/g, "'")
+              .replace(/&&amp;/g, "&")}
           </button>
           <button
             className={buttonColor4()}
             value="btn4"
             onClick={complete ? null : incorrectAnswer3}
           >
-            {incorrect3}
+            {incorrect3
+              .replace(/&quot;/g, '"')
+              .replace(/&#039;/g, "'")
+              .replace(/&&amp;/g, "&")}
           </button>
           {complete ? (
             <div className="correct-answer">
@@ -177,14 +189,20 @@ export default function Answers({
             value="btn1"
             onClick={complete ? null : correctAnswer}
           >
-            {correct}
+            {correct
+              .replace(/&quot;/g, '"')
+              .replace(/&#039;/g, "'")
+              .replace(/&&amp;/g, "&")}
           </button>
           <button
             className={buttonColor2()}
             value="btn2"
             onClick={complete ? null : incorrectAnswer1}
           >
-            {incorrect1}
+            {incorrect1
+              .replace(/&quot;/g, '"')
+              .replace(/&#039;/g, "'")
+              .replace(/&&amp;/g, "&")}
           </button>
           {complete ? (
             <div className="correct-answer">

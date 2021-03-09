@@ -20,7 +20,12 @@ export default function SubmitResults({ answers, complete, setComplete }) {
       <button className="results-button" onClick={validateCompletedTest}>
         Get Results
       </button>
-      <button onClick={() => window.location.reload()}>Try Another Quiz</button>
+      <button
+        className="try-again-button"
+        onClick={() => window.location.reload()}
+      >
+        Try Another Quiz
+      </button>
       {!complete ? (
         <div>Please Complete the Test</div>
       ) : (

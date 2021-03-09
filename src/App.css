@@ -4,9 +4,6 @@ body {
 }
 
 
-.results-button {
-  margin-top: 30px;
-}
 
 .checkmark {
   position: relative;
@@ -99,10 +96,31 @@ body {
   margin-bottom: 50px;
 }
 
-.results-button {
-  display: grid;
+.number-of-questions {
+  display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+}
+
+.results-button, .try-again-button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000;
+  background-color: rgb(213, 221, 230);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.results-buttons {
+  display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: 10px;
 }
 
 .green-text {
